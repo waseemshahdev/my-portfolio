@@ -1,22 +1,19 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waseem Shah | Full-Stack Web Developer</title>
     
-
     <meta name="description" content="Waseem Shah - Professional Full-Stack Web Developer specialized in Laravel and MySQL.">
     <meta property="og:title" content="Waseem Shah | Full-Stack Web Developer">
     <meta property="og:description" content="Check out my full-stack projects and technical skills in Laravel & MySQL.">
     <meta property="og:image" content="waseem-shah.jpeg">
     <meta property="og:type" content="website">
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        
         * {
             margin: 0;
             padding: 0;
@@ -44,7 +41,6 @@
             color: inherit;
         }
 
-        
         header {
             position: fixed;
             top: 0;
@@ -86,7 +82,6 @@
             color: var(--primary-color);
         }
 
-        
         .hamburger {
             display: none;
             font-size: 1.8rem;
@@ -94,7 +89,6 @@
             cursor: pointer;
         }
 
-        
         .hero {
             min-height: 100vh;
             width: 100%;
@@ -146,7 +140,6 @@
             transform: translateY(-3px);
         }
 
-    
         .hero-img-container {
             flex: 1;
             display: flex;
@@ -194,7 +187,6 @@
             transform: translateY(-3px);
         }
 
-
         section {
             padding: 5rem 2rem 3rem 2rem;
             max-width: 1200px;
@@ -218,7 +210,6 @@
             border-radius: 2px;
         }
 
-        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -249,7 +240,6 @@
             font-size: 0.95rem;
         }
 
-        
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -277,7 +267,6 @@
             font-size: 1rem;
         }
 
-    
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -356,7 +345,6 @@
             text-align: center;
         }
 
-        
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -407,7 +395,6 @@
             background-color: #7dd3fc;
         }
 
-        
         footer {
             text-align: center;
             padding: 2rem;
@@ -415,7 +402,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--accent-color);
         }
-
 
         @media (max-width: 768px) {
             .hamburger {
@@ -466,7 +452,6 @@
 </head>
 <body>
 
-    
     <header>
         <nav class="navbar">
             <div class="logo">Waseem.</div>
@@ -483,7 +468,6 @@
         </nav>
     </header>
 
-    
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hi, I am <br><span>Waseem Shah</span></h1>
@@ -503,7 +487,6 @@
         </div>
     </section>
 
-    
     <section id="services">
         <h2 class="section-title">What I Do</h2>
         <div class="services-grid">
@@ -524,7 +507,6 @@
             </div>
         </div>
     </section>
-
 
     <section id="skills">
         <h2 class="section-title">My Technical Toolkit</h2>
@@ -552,7 +534,6 @@
         </div>
     </section>
 
-    
     <section id="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
@@ -576,7 +557,6 @@
                 </div>
             </div>
             
-            
             <div class="project-card">
                 <div>
                     <h3>Water Supply Management</h3>
@@ -596,7 +576,6 @@
                 </div>
             </div>
 
-            
             <div class="project-card">
                 <div>
                     <h3>Shah Hazara Logistics System</h3>
@@ -618,33 +597,31 @@
         </div>
     </section>
 
-    
     <section id="contact">
         <h2 class="section-title">Let's Connect</h2>
-        <form class="contact-form" id="portfolioForm">
+        
+        <form class="contact-form" action="https://formspree.io/f/xkodplbp" method="POST" id="portfolioForm">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" required placeholder="Your Name">
+                <input type="text" name="name" id="name" required placeholder="Your Name">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" required placeholder="Your Email">
+                <input type="email" name="email" id="email" required placeholder="Your Email">
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                <textarea name="message" id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </section>
 
-    
     <footer>
         <p>&copy; 2026 Waseem Shah. All rights reserved.</p>
     </footer>
 
     <script>
-        
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
 
@@ -668,23 +645,6 @@
             });
         });
 
-        
-        document.getElementById('portfolioForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (name && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent successfully. Waseem will contact you soon.`);
-                document.getElementById('portfolioForm').reset();
-            } else {
-                alert('Please fill out all the fields before sending.');
-            }
-        });
-
-        
         const links = document.querySelectorAll('.nav-links a, .hero-content .btn');
         for (const link of links) {
             link.addEventListener('click', clickHandler);
