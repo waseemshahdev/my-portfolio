@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waseem Shah | Full-Stack Web Developer</title>
     
-    <meta name="description" content="Waseem Shah - Professional Full-Stack Web Developer specialized in Laravel and MySQL.">
+
+    <meta name="description" content="Waseem Shah - Professional Full-Stack Web Developer specialized in Laravel, PHP, and MySQL. Based in Karachi, Pakistan.">
+    <meta name="keywords" content="Waseem Shah, Full Stack Developer, Laravel Developer Karachi, Web Developer Pakistan, PHP, MySQL">
+    <meta name="author" content="Waseem Shah">
+
     <meta property="og:title" content="Waseem Shah | Full-Stack Web Developer">
     <meta property="og:description" content="Check out my full-stack projects and technical skills in Laravel & MySQL.">
     <meta property="og:image" content="waseem-shah.jpeg">
     <meta property="og:type" content="website">
 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -148,8 +153,8 @@
         }
 
         .profile-img {
-            width: 220px;
-            height: 220px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--primary-color);
@@ -210,6 +215,64 @@
             border-radius: 2px;
         }
 
+
+        .about-box {
+            background-color: var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            border-left: 2px solid var(--primary-color);
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.3rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .timeline-item span {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+        }
+
+        .timeline-item p {
+            color: #cbd5e1;
+            margin-top: 0.5rem;
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -240,6 +303,7 @@
             font-size: 0.95rem;
         }
 
+        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -267,9 +331,10 @@
             font-size: 1rem;
         }
 
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
@@ -345,12 +410,51 @@
             text-align: center;
         }
 
-        .contact-form {
-            max-width: 600px;
+        /* Contact Section Container */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-card i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .info-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-card p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
             background-color: var(--secondary-color);
             padding: 2.5rem;
             border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .form-group {
@@ -423,7 +527,7 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             .nav-links.active {
-                max-height: 300px;
+                max-height: 350px;
             }
             .hero {
                 flex-direction: column-reverse;
@@ -438,11 +542,14 @@
                 font-size: 2.5rem;
             }
             .profile-img {
-                width: 160px;
-                height: 160px;
+                width: 180px;
+                height: 180px;
             }
             .social-links {
                 justify-content: center;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
             }
             .projects-grid {
                 grid-template-columns: 1fr;
@@ -460,6 +567,7 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -475,15 +583,37 @@
             <a href="#projects" class="btn">View My Work</a>
             
             <div class="social-links">
-                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/923410912092" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="#contact"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/923410912092" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#contact" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
 
         <div class="hero-img-container">
-            <img src="waseem_shah.jpeg" alt="waseem shah" class="profile-img">
+            <img src="waseem-shah.jpeg.jpeg" alt="Waseem Shah" class="profile-img">
+        </div>
+    </section>
+
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-box">
+            <p>
+                I am a dedicated Full-Stack Web Developer based in Karachi, Pakistan. Currently pursuing a Higher Diploma in Software Engineering (HDSE) at Aptech, I specialize in architecting efficient relational databases and turning complex workflows into clean, automated web solutions using Laravel and PHP.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="education">
+        <h2 class="section-title">Education & Qualifications</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Higher Diploma in Software Engineering (HDSE)</h3>
+                <span>Aptech Computer Education — Ongoing</span>
+                <p>Focusing on full-stack web development, enterprise database architecture, web application security, and modern PHP frameworks.</p>
+            </div>
         </div>
     </section>
 
@@ -528,6 +658,10 @@
                 <h4>JavaScript</h4>
             </div>
             <div class="skill-card">
+                <i class="fab fa-bootstrap"></i>
+                <h4>Bootstrap 5</h4>
+            </div>
+            <div class="skill-card">
                 <i class="fab fa-html5"></i>
                 <h4>HTML5 / CSS3</h4>
             </div>
@@ -557,6 +691,7 @@
                 </div>
             </div>
             
+            <!-- Project 2 -->
             <div class="project-card">
                 <div>
                     <h3>Water Supply Management</h3>
@@ -576,6 +711,7 @@
                 </div>
             </div>
 
+            
             <div class="project-card">
                 <div>
                     <h3>Shah Hazara Logistics System</h3>
@@ -597,24 +733,51 @@
         </div>
     </section>
 
+    
     <section id="contact">
         <h2 class="section-title">Let's Connect</h2>
         
-        <form class="contact-form" action="https://formspree.io/f/xkodplbp" method="POST" id="portfolioForm">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required placeholder="Your Name">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>waseemshah@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>+92 341 0912092</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Karachi, Pakistan</p>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required placeholder="Your Email">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+
+            <form class="contact-form" action="https://formspree.io/f/xkodplbp" method="POST" id="portfolioForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <footer>
@@ -622,6 +785,7 @@
     </footer>
 
     <script>
+        
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
 
@@ -645,6 +809,7 @@
             });
         });
 
+    
         const links = document.querySelectorAll('.nav-links a, .hero-content .btn');
         for (const link of links) {
             link.addEventListener('click', clickHandler);
@@ -663,6 +828,18 @@
                     });
                 }
             }
+        }
+
+        
+        const portfolioForm = document.getElementById('portfolioForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if(portfolioForm) {
+            portfolioForm.addEventListener('submit', () => {
+                submitBtn.innerText = 'Sending Message...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.disabled = true;
+            });
         }
     </script>
 </body>
